@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+</head>
+<body>
+
+    <div class="container mt-5 text-center" >
+        <h2 class="fs-5">GUESS A NUMBER TO WIN </h2>
+    <input type="text" id="userInput" class="shadow-sm p-3 mb-1 bg-body rounded text-center" class="rounded-5 "  class="w-50 p-3" style="background-color: #c2c0e3;" class="input" name="userInput" placeholder="Type your Number to win"><br>
+
+    <button type="button" class="btn btn-primary mt-2 fst-italic" onclick="getUser()" data-bs-toggle="modal" data-bs-target="#myModal">
+      PLAY A GAME
+    </button>
+    
+</div>
+      
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header text-center">
+              <h2 class="modal-title">YOUR PREDICT NUMBER</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              <p class="text-danger"><b id="userPredict"></b></p>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+
+
+
+    <script>
+        
+        // randomNumber = document.getElementById('userInput');
+        // randomNumberValue = document.getElementById('userInput').value
+
+        
+  
+
+        
+        function getUser(){
+
+          const output = document.getElementById('userPredict');
+
+          let userInput = document.getElementById('userInput').value;
+          let randomNumber = Math.floor(Math.random() *11 );
+
+          let userPredict = "";
+
+        if (userInput == '' ){
+          output.innerHTML = `Input Your Number`
+
+        }
+
+        else if(userInput > 10  ){
+          output.innerHTML = `Your Input of ${userInput} is invalid because is greater than 10 and your Random number is ${randomNumber} which is less than 10. Try number between 0 and 10 to Win `
+        }
+
+        else if(userInput != randomNumber ){
+          output.innerHTML = `Your Input value is ${userInput} which is not the same Computer Random Number of ${randomNumber}, You loose`
+        }
+        else {
+          userInput == randomNumber
+          output.style.color=green.innerHTML = `HURRAY!!! YOU WON`
+        }
+        
+    }
+
+
+    </script>
+</body>
+</html>
