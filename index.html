@@ -75,16 +75,21 @@
 
         }
 
-        else if(userInput > 10  ){
+        else if(userInput > 10 ){
           output.innerHTML = `Your Input of ${userInput} is invalid because is greater than 10 and your Random number is ${randomNumber} which is less than 10. Try number between 0 and 10 to Win `
+        }
+        else if(userInput <0 ){
+          output.innerHTML = `Your Input of ${userInput} is invalid because is less than 1 and random number is  ${randomNumber}. Please try number greater than 0 to win`
         }
 
         else if(userInput != randomNumber ){
-          output.innerHTML = `Your Input value is ${userInput} which is not the same Computer Random Number of ${randomNumber}, You loose`
+          output.innerHTML = `Your Input value is ${userInput} which is not the same as Computer Random Number of ${randomNumber}, You loose. Try another number to win`
         }
-        else {
-          userInput == randomNumber
+        else if(userInput == randomNumber) {
           output.style.color=green.innerHTML = `HURRAY!!! YOU WON`
+        }
+        else{
+          `You loose`
         }
         
     }
